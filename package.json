@@ -1,0 +1,17 @@
+{
+  "name": "bmfont-loader",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "suchipi/bmfont-loader",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/generator": "^7.7.7",
+    "@babel/template": "^7.7.4",
+    "@babel/types": "^7.7.4",
+    "load-bmfont": "^1.4.0"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1"
+  }
+}
