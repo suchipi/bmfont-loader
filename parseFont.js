@@ -2,9 +2,7 @@ const util = require("util");
 const template = require("@babel/template").default;
 const generate = require("@babel/generator").default;
 const t = require("@babel/types");
-const loadBmfontCB = require("load-bmfont");
-
-const loadBMFont = util.promisify(loadBmfontCB);
+const loadBmfont = require("load-bmfont-sync");
 
 const makeProgram = template(`
   module.exports = EXPORTS;
@@ -20,8 +18,8 @@ const makeRequire = template.expression(`
     : require(SOURCE)
 `);
 
-async function parseFont(filepath) {
-  const font = await loadBMFont(filepath);
+function parseFont(filepath) {
+  const font = loadBmfont(filepath);
 
   const objExpression = template.expression("(" + JSON.stringify(font) + ")")();
 
